@@ -65,6 +65,7 @@
                 {!! Form::submit('Salvar', ['class' => 'btn btn-lg btn-info pull-right'] ) !!}
                 {!! Form::button('Novo', ['class' => 'btn btn-lg btn-success pull-right','style' => 'margin-right: 10px;','onclick' => 'javascript:adicionar()'] ) !!}
                 {!! Form::button('Excluir', ['class' => 'btn btn-lg btn-danger pull-right','style' => 'margin-right: 10px;','onclick' => 'javascript:excluir()'] ) !!}
+                {!! Form::button('Voltar para listagem', ['class' => 'btn btn-lg btn-primary pull-left','onclick' => "window.location.href='/jogador'"] ) !!}
             </div>
         </div>
 

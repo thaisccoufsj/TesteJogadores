@@ -25,11 +25,11 @@ Route::get('/jogador', function () {
     return view('jogador.list', [
         'jogadores' => $jogadores
     ]);
-});
+})->name("listar_jogadores");
 
 #Jogador
 Route::get('/jogador/novo','App\Http\Controllers\JogadorController@create');//formulario adicionar
 Route::post('/jogador/novo','App\Http\Controllers\JogadorController@store')->name('registrar_jogador');//exec adicionar
 Route::get('/jogador/editar/{id}','App\Http\Controllers\JogadorController@edit');//exibir jogador
-Route::put('/jogador/editar/{id}','App\Http\Controllers\JogadorController@update')->name('alterar_jogador');//atualizar jogador
-Route::delete('/jogador/excluir/{id}','App\Http\Controllers\JogadorController@destroy')->name('excluir_jogador');//excluir jogador
+Route::put('/jogador/editar/{id}','App\Http\Controllers\JogadorController@update')->name('alterar_jogador');//exec salvar
+Route::delete('/jogador/excluir/{id}','App\Http\Controllers\JogadorController@destroy')->name('excluir_jogador');//exec excluir

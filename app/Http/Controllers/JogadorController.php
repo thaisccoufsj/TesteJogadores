@@ -81,7 +81,7 @@ class JogadorController extends Controller{
         unset($Jogador);
 
         if($sucesso){
-            return Redirect::route('jogador')->with(['sucesso','O jogador foi excluído com sucesso.']);
+            return Redirect::route('listar_jogadores')->with(['sucesso','O jogador foi excluído com sucesso.']);
         }else{
             return view("/jogador/editar/$id",['Jogador' => $Jogador,'erro' => 'Não foi possível excluir o jogador.']);
         }
