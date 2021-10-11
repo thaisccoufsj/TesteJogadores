@@ -7,7 +7,7 @@
     @section('content')
 
         @if (count($jogadores) > 0)
-            <table class="table table-striped table-hover table-bordered ">
+            <table class="table table-striped table-hover table-bordered ">  
 
                 <!-- Table Headings -->
                 <thead class="thead-dark">
