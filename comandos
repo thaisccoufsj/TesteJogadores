@@ -1,0 +1,14 @@
+Cria projeto : composer create-project  --prefer-dist  laravel/laravel laravel-7-crud-app
+Cria modelo e migração : php artisan make:model Produto -m 
+Faz o controler e rotas: php artisan make:controller ContactController --resource
+
+
+->>
+	composer require laravelcollective/html
+	Populate the providers array with the entry for Illuminate HTML.
+
+	Collective\Html\HtmlServiceProvider::class,
+
+	Configure the aliases array to allow for HTML and Form Facades.
+		'Form' => Collective\Html\FormFacade::class,
+		'Html' => Collective\Html\HtmlFacade::class,
