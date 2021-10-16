@@ -15,6 +15,8 @@ class CreateSorteiosTable extends Migration{
             $table->id();
             $table->integer("total_jogadores");
             $table->integer("total_times");
+            $table->date("data_jogo");
+            $table->time("hora_jogo");
             $table->timestamps();
         });
     }

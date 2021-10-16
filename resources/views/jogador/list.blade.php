@@ -2,6 +2,7 @@
 
 <div class="well">
     <legend>Jogadores</legend>
+    {!! Form::button('Inicio', ['class' => 'btn btn-lg btn-info ','style' => 'margin-right: 10px;','onclick' => "javascript:window.location.href = '/'"] ) !!}
     {!! Form::button('Novo', ['class' => 'btn btn-lg btn-success ','style' => 'margin-right: 10px;','onclick' => "javascript:window.location.href = '/jogador/novo'"] ) !!}
    @include('dialogos')
 
@@ -16,7 +17,7 @@
                     <th scope="col">Nome</th>
                     <th scope="col">Nível</th>
                     <th scope="col">Goleiro ?</th>
-                    <th scope="col">Ação</th>
+                    <th scope="col">Ações</th>
                 </thead>
 
                 <!-- Table Body -->
@@ -30,7 +31,7 @@
                         <td>{{$jogador->goleiro == 1 ? "Sim" : "Não" }}</td>
                         <td>
                             <button type="button" class="btn btn-info" onclick="window.location.href='/jogador/editar/{{$jogador->id}}'">Editar</button>
-                            <button type="button" class="btn btn-danger" onclick="excluir({{$jogador->id}})">Excluir</button>
+                            <button type="button" class="btn btn-danger" onclick="excluir('{{$jogador->id}}')">Excluir</button>
                         </td>
                     </tr>
                 @endforeach

@@ -4,12 +4,12 @@
 
    @include('dialogos')
 
-    {!! Form::open(['url' => route('alterar_jogador',['id' => $Jogador->id]) , 'class' => 'form-horizontal','id'=>'formulario']) !!}
+    {!! Form::open(['url' => "/jogador/editar/$Jogador->id" , 'class' => 'form-horizontal','id'=>'formulario']) !!}
     @csrf
+    @method('PATCH')
     <fieldset>
 
         <legend>Visualizar Jogador</legend>
-
         <!-- Id e nome -->
         <div class="form-group">
             {!! Form::label('id', 'Id:', ['class' => 'col-lg-1 control-label']) !!}
@@ -61,10 +61,10 @@
         </div>
 
         <div class="form-group">
-            <div class="col-lg-10 col-lg-offset-2">
+            <div class="col-lg-12 ">
                 {!! Form::submit('Salvar', ['class' => 'btn btn-lg btn-info pull-right'] ) !!}
-                {!! Form::button('Novo', ['class' => 'btn btn-lg btn-success pull-right','style' => 'margin-right: 10px;','onclick' => 'javascript:adicionar()'] ) !!}
                 {!! Form::button('Excluir', ['class' => 'btn btn-lg btn-danger pull-right','style' => 'margin-right: 10px;','onclick' => 'javascript:excluir()'] ) !!}
+                {!! Form::button('Novo', ['class' => 'btn btn-lg btn-success pull-right','style' => 'margin-right: 10px;','onclick' => 'javascript:adicionar()'] ) !!}
                 {!! Form::button('Voltar para listagem', ['class' => 'btn btn-lg btn-primary pull-left','onclick' => "window.location.href='/jogador'"] ) !!}
             </div>
         </div>
@@ -78,13 +78,11 @@
 <script>
 
     function excluir(){
-
         if(confirm('Tem certeza que deseja excluir esse jogador?')){
            $('#formulario').attr('action','/jogador/excluir/' + $('#id').val());
-           $('#formulario').prepend("<input type='hidden' name='_method' value='delete' />");
+           $("[name='_method']").val('DELETE');
            $('#formulario').submit();
         }
-
     }
 
     function adicionar(){

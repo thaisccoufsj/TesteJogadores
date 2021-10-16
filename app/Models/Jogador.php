@@ -9,7 +9,6 @@ class Jogador extends Model{
     use HasFactory;
 
     protected $fillable = ["nome","nivel","goleiro"];
-
     protected $table = "jogadores";
 
 }

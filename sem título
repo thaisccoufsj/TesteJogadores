@@ -9,10 +9,10 @@ nivel (1 a 5)
 é goleiro
 
 sorteio:
-quem marcou presença
-jogadores por time
-pelo menos 2 times
+	quem marcou presença
+	jogadores por time
+	pelo menos 2 times
 se tiver mais de dois times o ultimo podera ficar com menos que o definido
 outros times nao podem ter mais do que o definido
-validar sorteio para o numero minimo de jogadores
-somente 1 goleiro
+	validar sorteio para o numero minimo de jogadores
+somente 1 goleiro por time
